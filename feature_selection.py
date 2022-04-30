@@ -1,6 +1,5 @@
 from sklearn.feature_selection import mutual_info_classif, mutual_info_regression
 import pandas as pd
-from sympy import numer
 
 def calculate_mi_score(input_data, y, mode):
     mi_input_data = input_data.copy()
@@ -19,7 +18,7 @@ def calculate_mi_score(input_data, y, mode):
 def filter_columns_by_score(input_data, y, mode, mi_score_threshold = 0.5, one_hot_encoder_nlimit=10):
 
     input_data_copy = input_data.copy()
-    columns_by_dtype = {"one_hot_encoding":[], "ordinal_encoding":[], "numerical":[]}
+    columns_by_dtype = {"numerical":[],"one_hot_encoding":[], "ordinal_encoding":[]}
     mi_score = calculate_mi_score(input_data, y, mode)
     threshold_surpassing_cols = mi_score.loc[mi_score > mi_score_threshold].index.tolist()
 
@@ -32,6 +31,6 @@ def filter_columns_by_score(input_data, y, mode, mi_score_threshold = 0.5, one_h
         if input_data_copy[categorical_column].nunique() <= one_hot_encoder_nlimit:
             columns_by_dtype["one_hot_encoding"].append(categorical_column)
         else:
-            columns_by_dtype["Ordinal Encoded"].append(categorical_column)
+            columns_by_dtype["ordinal_encoding"].append(categorical_column)
 
     return columns_by_dtype
