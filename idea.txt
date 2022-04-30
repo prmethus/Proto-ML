@@ -1,0 +1,10 @@
+
+
+
+1. Create Pipeline
+2. Automatically apply Imputation
+3. Take small samples from each columns and do Feature Engineering and test Mutual Info Score.
+4. Perform categorical Encoding.
+5. Apply PCA
+6. Train model
+7. Test model
