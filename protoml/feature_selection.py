@@ -1,9 +1,8 @@
 from sklearn.feature_selection import mutual_info_classif, mutual_info_regression
 import pandas as pd
-import settings
+from protoml import settings
 
 settings.init()
-
 
 def calculate_mi_score(input_data, y, mode):
     mi_input_data = input_data.copy()

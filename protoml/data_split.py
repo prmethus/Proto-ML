@@ -1,7 +1,6 @@
 import stringcolor
 from sklearn.model_selection import train_test_split, StratifiedShuffleSplit
 
-
 def split_data(X, y, mode):
     m = len(X)
     assert len(X) == len(y)
