@@ -11,7 +11,6 @@ Currently Supported Modes = 'classification', 'regression'
 ### Installation:
 Run `python3 setup.py install` to install protoml
 
-
 ### Usage:
 protoml.ML_pipeline(mode)
 - Creates the ML pipeline
@@ -23,13 +22,13 @@ protoml.ML_pipeline(mode)
 protoml.base - Utilities for working with protoml
 protoml.visualization - Uses Matplotlib and Seaborn backend for
 
-
-### protoml.base
+protoml.base
 protoml.base.save(ml_pipeline, directory)
 - Saves the trained pipeline in the specified directory
 
 protoml.base.load(directory)
 - Loads the trained pipeline from the specified directory
+
 
 
 #### THIS IS A BETA VERSION
