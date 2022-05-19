@@ -33,4 +33,4 @@ protoml.base.load(directory)
 
 
 #### THIS IS A BETA VERSION
-FURTHER IMPROVEMENTS REQUIRED: Early Stopping to reduce Regularization, Automated Feature Engineering, Command Line Utility, Automated Deployment with FastAPI and Docker
+FURTHER IMPROVEMENTS REQUIRED: Early Stopping to reduce Overfitting, Automated Feature Engineering, Command Line Utility, Automated Deployment with FastAPI and Docker
