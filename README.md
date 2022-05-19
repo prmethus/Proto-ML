@@ -19,7 +19,7 @@ protoml.ML_pipeline(mode)
 - .score(X,y) Shows the R2 score 
 
 ### Tools:
-protoml.base - Utilities for working with protoml
+protoml.base - Utilities for working with protoml <br>
 protoml.visualization - Uses Matplotlib and Seaborn backend for
 
 protoml.base
