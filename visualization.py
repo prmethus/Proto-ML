@@ -1,5 +1,9 @@
+# Incomplete
+
+
 import matplotlib.pyplot as plt
 import seaborn as sns
+
 
 class visualization:
 
@@ -15,18 +19,18 @@ class visualization:
 
     @classmethod
     def histogram(self, data, bins):
-        sns.histplot(x=x,y=y,bins=bins)
-    
+        sns.histplot(x=data, bins=bins)
+
     @classmethod
-    def barplot(self, x,y):
-        sns.barplot(x,y)
+    def barplot(self, x, y):
+        sns.barplot(x, y)
 
     @classmethod
     def lineplot(self, x, y):
-        sns.lineplot(x,y)
+        sns.lineplot(x, y)
 
     @classmethod
-    def scatterplot(self, x,y):
+    def scatterplot(self, x, y):
         sns.scatterplot(x, y)
 
     @classmethod

@@ -1,9 +1,13 @@
 from sklearn.feature_selection import mutual_info_classif, mutual_info_regression
 import pandas as pd
+import settings
+
+settings.init()
+
 
 def calculate_mi_score(input_data, y, mode):
     mi_input_data = input_data.copy()
-    
+
     for col in mi_input_data.select_dtypes(["object"]):
         mi_input_data[col], _ = mi_input_data[col].factorize()
     if mode == "classification":
@@ -13,17 +17,33 @@ def calculate_mi_score(input_data, y, mode):
 
     ndf = pd.Series(mi_score, index=mi_input_data.columns).sort_values(ascending=False)
 
-    return ndf 
+    return ndf
 
-def filter_columns_by_score(input_data, y, mode, mi_score_threshold = 0.5, one_hot_encoder_nlimit=10):
+
+def filter_columns_by_score(
+    input_data, y, mode, mi_score_threshold=0.5, one_hot_encoder_nlimit=10
+):
 
     input_data_copy = input_data.copy()
-    columns_by_dtype = {"numerical":[],"one_hot_encoding":[], "ordinal_encoding":[]}
+    columns_by_dtype = {"numerical": [], "one_hot_encoding": [], "ordinal_encoding": []}
     mi_score = calculate_mi_score(input_data, y, mode)
-    threshold_surpassing_cols = mi_score.loc[mi_score > mi_score_threshold].index.tolist()
+    threshold_surpassing_cols = mi_score.loc[
+        mi_score > mi_score_threshold
+    ].index.tolist()
 
-    numerical_columns = input_data[threshold_surpassing_cols].select_dtypes(["int", "float"]).columns.tolist()
-    categorical_columns = input_data[threshold_surpassing_cols].select_dtypes(["object","category"]).columns.tolist()
+    numerical_columns = (
+        input_data[threshold_surpassing_cols]
+        .select_dtypes(["int", "float"])
+        .columns.tolist()
+    )
+    categorical_columns = (
+        input_data[threshold_surpassing_cols]
+        .select_dtypes(["object", "category"])
+        .columns.tolist()
+    )
+
+    list(map(settings.inputFeatures.append, numerical_columns))
+    list(map(settings.inputFeatures.append, categorical_columns))
 
     columns_by_dtype["numerical"] = numerical_columns
 
