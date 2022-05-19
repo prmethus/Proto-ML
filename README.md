@@ -20,7 +20,7 @@ protoml.ML_pipeline(mode)
 
 ### Tools:
 protoml.base - Utilities for working with protoml <br>
-protoml.visualization - Uses Matplotlib and Seaborn backend for
+protoml.visualization - Uses Matplotlib and Seaborn backend for creating common plots. (Not Done Yet)
 
 protoml.base
 protoml.base.save(ml_pipeline, directory)
