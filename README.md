@@ -13,10 +13,10 @@ Run `python3 setup.py install` to install protoml
 
 ### Usage:
 protoml.ML_pipeline(mode)
-- Creates the ML pipeline
-.fit(X,y) For Splitting the data and training the model on it
-.predict(X) For making predictions
-.score(X,y) Shows the R2 score
+- Creates the ML pipeline <br>
+.fit(X,y) For Splitting the data and training the model on it <br>
+.predict(X) For making predictions <br>
+.score(X,y) Shows the R2 score 
 
 ### Tools:
 protoml.base - Utilities for working with protoml
